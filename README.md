@@ -1,1 +1,1 @@
-"# gwx's Chinese blog && personal site'
+"# gwx's Chinese blog && personal site"
