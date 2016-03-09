@@ -1,0 +1,25 @@
+
+/*
+  新建日志页面
+*/
+#post_new_form{
+  .panel-body{
+    .form-group{
+      label{display: block;}
+    }
+  }
+}
+
+/*
+  日志列表页面
+*/
+#post_index{
+  .panel-body{
+    ul{
+      list-style: none;
+      li{
+        font-size: 1.5em;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+/ pc: width:80%, text-align:center; mobile: width: 100%.
+.container
+  #post_index
+    .panel.panel-success
+      .panel-heading= I18n.t('posts.index_title')
+      .panel-body
+        - @posts.each do |post|
+          ul
+            li
+              =link_to post.title, post
+              span.pull-right= post.created_at.to_date
+      .panel-footer
+        =link_to I18n.t('post.new'), new_post_path
