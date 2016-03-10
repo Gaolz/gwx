@@ -1,17 +1,11 @@
+=title I18n.t('post.new_form')
 .container
   #post_new_form
     .panel.panel-success
-      .panel-heading= I18n.t('post.new_form')
+      .panel-heading
+        span= I18n.t('post.new_form')
       .panel-body
         = form_for @post do |f|
-          .form-group
-            =f.label :title, I18n.t('post.title')
-            =f.text_field :title
-          .form-group
-            =f.label :content, I18n.t('post.content')
-            =f.text_area :content
-          .form-group
-            =f.submit I18n.t('post.submit')
-            // =f.submit '预览'
+          = render 'form', f: f
       .panel-footer
         =link_to I18n.t('post.all'), posts_path

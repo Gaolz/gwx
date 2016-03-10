@@ -7,7 +7,7 @@
     create_success: "日志创建成功！"
     title: "* 标题"
     content: "* 内容"
-    submit: "提交"
+    submit: "发表"
     all: "所有日志"
     flash:
       blank_title_or_content: "标题和内容都不能为空"

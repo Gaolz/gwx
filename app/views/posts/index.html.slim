@@ -7,7 +7,7 @@
         - @posts.each do |post|
           ul
             li
-              =link_to post.title, post
+              =link_to emojify(post.title), post
               span.pull-right= post.created_at.to_date
       .panel-footer
         =link_to I18n.t('post.new'), new_post_path
