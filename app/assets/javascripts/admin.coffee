@@ -2,7 +2,10 @@ window.Admin =
 editor:() ->
   new Simditor(
     textarea: $('#editor'),
-    toolbar: ['title','bold','italic','underline','strikethrough','color','|','ol','ul','blockquote','code','table','|','link','image','hr'],
+    toolbar: ['title','bold','italic','underline','strikethrough','color','|','ol','ul','blockquote','code','table','|','link','image','emoji','hr'],
+    emoji: {
+      imagePath: '/images/simditor-emoji/'
+    },
     placeholder: '请输入正文...',
     defaultImage: '/image.png',
     filekey: 'file',
