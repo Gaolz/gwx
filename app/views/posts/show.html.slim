@@ -2,6 +2,6 @@
   #post_show
     .panel.panel-default
       .panel-heading= emojify @post.title
-      .panel-body= emojify @post.content
+      .panel-body= emojify raw(@post.content)
       .panel-footer
         =link_to I18n.t('post.all'), posts_path

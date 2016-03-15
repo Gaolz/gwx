@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   resources :posts
 
+  post 'photo' => 'photos#upload'
+
   # Example resource route with options:
   #   resources :products do
   #     member do

@@ -15,12 +15,23 @@ module Gwx
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
+    config.autoload_paths << Rails.root.join('lib')
+
+    config.time_zone = 'Beijing'
+
+    config.active_record.time_zone_aware_attributes = false
+    config.active_record.default_timezone = :local
+
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
 
     # Use zh_CN
     config.i18n.default_locale = 'zh-CN'
+
+    config.generators.orm :active_record
+
+    config.exceptions_app = routes
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
