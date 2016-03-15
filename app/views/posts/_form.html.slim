@@ -7,17 +7,5 @@
   = f.submit t('post.submit'), class: 'btn btn-default pull-right'
   
 javascript:
-    var editor = new Simditor({
-      textarea: $('#editor'),
-      toolbar: ['title','bold','italic','underline','strikethrough','color','|','ol','ul','blockquote','code','table','|','link','image','hr'],
-      placeholder: '请输入正文...',
-      defaultImage: '/image.png',
-      filekey: 'file',
-      upload: {
-        url: '/photo',
-        params: null,
-        connectionCount: 3,
-        leaveConfirm: '正在上传文件，如果离开上传会自动取消',
-      },
-      pasteImage: true
-    })
+  $(window).bind('beforeunload', function(){ return '你输入的内容尚未保存，确定离开此页面吗？'; });  
+  Admin.editor();
