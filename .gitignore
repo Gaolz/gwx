@@ -27,6 +27,9 @@ config/secrets.yml
 /.bundle
 /vendor/bundle
 
+# public
+/public/uploads/*
+
 .rvmc
 
 .byebug_history

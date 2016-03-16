@@ -5,9 +5,10 @@
     new: "新建一篇日志"
     new_form: "新建日志"
     create_success: "日志创建成功！"
-    title: "* 标题"
-    content: "* 内容"
+    title: "标题"
+    content: "内容"
     submit: "发表"
     all: "所有日志"
+    preview: "预览"
     flash:
       blank_title_or_content: "标题和内容都不能为空"

@@ -1,5 +1,11 @@
 .form-group
   = f.text_field :title, placeholder: I18n.t('post.title'), class: "form-control"
 .form-group
-  = f.text_area :content, rows: 20, class: "form-control"
-= f.submit I18n.t('post.submit'), class: 'btn btn-default pull-right'
+  = f.text_area :content, placeholder: I18n.t('post.content'), autofocus: true, rows: 20, id: "editor", class: "form-control"
+.form-group
+  = link_to t('post.preview'), "#", :'data-toggle' => 'modal', :'data-target' => '#preview_post', class: 'btn btn-default pull-left'
+  = f.submit t('post.submit'), class: 'btn btn-default pull-right'
+  
+javascript:
+  $(window).bind('beforeunload', function(){ return '你输入的内容尚未保存，确定离开此页面吗？'; });  
+  Admin.editor();
