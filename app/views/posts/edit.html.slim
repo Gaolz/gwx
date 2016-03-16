@@ -1,11 +1,11 @@
-=title t('post.new_form')
+=title t('post.edit_form')
 .container
   #post_new_form
     .panel.panel-default
       .panel-heading
-        span= t('post.new_form')
+        span= t('post.edit_form')
       .panel-body
-        = form_for @post do |f|
+        = form_for @post, method: :patch do |f|
           = render 'form', f: f
       .panel-footer
         =link_to t('post.all'), posts_path

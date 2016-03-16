@@ -9,7 +9,7 @@ module ApplicationHelper
     flash.each do |key, msg|
       key = :success if key.to_sym == :notice
       key = :danger if key.to_sym == :alert
-      text = content_tag(:div, link_to("x", "#", class: 'close', 'data-dismiss' => 'alert') + msg, class: "alert alert-#{key}")
+      text = content_tag(:div, link_to('x', '#', class: 'close', 'data-dismiss' => 'alert') + msg, class: "alert alert-#{key}")
       flash_messages << text if msg
     end
 
@@ -18,5 +18,13 @@ module ApplicationHelper
 
   def to_date
     to_date.to_s
+  end
+
+  def controller?(*controller)
+    controller.include?(params[:controller])
+  end
+
+  def action?(*action)
+    action.include?(params[:action])
   end
 end

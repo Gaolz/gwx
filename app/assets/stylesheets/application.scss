@@ -16,10 +16,10 @@
 @import 'bootstrap';
 @import 'post';
 @import 'simditor';
-@import 'simditor-emoji';
-@import 'simditor-html';
-@import 'simditor-markdown';
-@import 'simditor-fullscreen';
+@import 'simditor/simditor-emoji';
+@import 'simditor/simditor-html';
+@import 'simditor/simditor-markdown';
+@import 'simditor/simditor-fullscreen';
 
 body{
   background:#E7EAEC none repeat scroll 0% 0%;
