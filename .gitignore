@@ -30,3 +30,5 @@ config/secrets.yml
 .rvmc
 
 .byebug_history
+.gitignore
+/public/uploads
