@@ -2,7 +2,7 @@
   posts:
     index_title: "广告列表"
   post:
-    new: "新建一篇日志"
+    new: "创建日志"
     new_form: "新建日志"
     edit_form: "修改"
     destroy_form: "删除"
@@ -11,7 +11,6 @@
     content: "内容"
     submit: "发表"
     all: "所有日志"
-    preview: "预览"
     flash:
       create_success: "日志创建成功！"
       update_success: "日志修改成功！"
