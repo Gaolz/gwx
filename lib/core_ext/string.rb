@@ -3,6 +3,10 @@ class String
     self =~ /\p{Han}/
   end
 
+  def only_word
+    gsub(/[^-’[^\p{P}]]|’$|’”$/, '\1')
+  end
+
   def contains_cjk?
     self =~ /\p{Han}|\p{Katakana}|\p{Hiragana}|\p{Hangul}/
   end
