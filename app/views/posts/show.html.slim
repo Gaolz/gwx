@@ -10,8 +10,3 @@
       .panel-body= emojify raw(@post.content)
       .panel-footer
         =link_to t('post.all'), posts_path
-        =link_to t('post.edit_form'), edit_post_path(@post),\
-          class: 'pull-right btn btn-sm btn-warning'
-        =link_to t('post.destroy_form'), post_path(@post), method: :delete,\
-          class: 'pull-right btn btn-sm btn-danger', \
-          confirm: { data: t('post.are_you_sure_to_destroy') }

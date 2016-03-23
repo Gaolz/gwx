@@ -1,0 +1,38 @@
+#header {
+  padding: 20px 0;
+  border-bottom: 1px solid #f9f9f9;
+  .container{
+    max-width: 860px;
+  }
+  #logo{
+    opacity: .3;
+    &:hover { opacity: 1; }
+  }
+  a{
+    color: #444;
+    font-family: "Avenir Next",Avenir,"Helvetica Neue",sans-serif;
+    text-transform: uppercase;
+    &:hover{
+      opacity: 1;
+      color: #222;
+      text-decoration: none;
+    }
+  }
+}
+.yue {
+  color: #444443;
+}
+
+#nav {
+  float: right;
+  a{
+    font-size: 1pc;
+    margin-right: 15px;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+    &:hover{
+      border-color: rgba(0,0,0,.1);
+      text-decoration: none;
+    }
+  }
+}

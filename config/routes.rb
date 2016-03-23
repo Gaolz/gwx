@@ -15,9 +15,15 @@ Rails.application.routes.draw do
   #   resources :products
   root 'posts#index'
 
-  resources :posts
+  resources :posts, only: [:show, :index]
 
   post 'photo' => 'photos#upload'
+
+  namespace :admin do
+    resources :posts
+    resources :sessions, only: [:new, :create]
+    root to: 'home#index'
+  end
 
   # Example resource route with options:
   #   resources :products do

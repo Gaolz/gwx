@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= yield(:title) || Gwx %></title>
+  <title><%= yield(:title) || GLZ %></title>
   <meta name="title" content="glz Chinese blog" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="爱好中医的rubist" />
@@ -14,7 +14,10 @@
   <div class="container">
     <%= notice_message %>
   </div>
-
-  <%= yield %>
+  <% if content_for? :page_content %>
+    <%= yield :page_content %>
+  <% else %>
+    <%= yield %>
+  <% end %>
 </body>
 </html>

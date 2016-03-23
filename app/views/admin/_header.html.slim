@@ -1,0 +1,8 @@
+header#header
+  .container.yue
+    a#logo href='/'
+      strong To Be Water
+    nav#nav
+      = link_to "Archieves", admin_posts_path
+      = link_to "Log out", '#', method: :delete,\
+        data: { confirm: '确定要退出？' }, id: :admin_destroy
