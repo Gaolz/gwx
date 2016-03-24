@@ -2,7 +2,7 @@
 <html>
 <head>
   <title><%= yield(:title) || GLZ %></title>
-  <meta name="title" content="glz Chinese blog" />
+  <meta name="title" content="Admin Page Of #{Yetting.app_name}" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="爱好中医的rubist" />
   <meta name="author" content="高老庄">
@@ -11,10 +11,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render 'admin/header' %>
   <div class="container">
     <%= notice_message %>
   </div>
-  <%= render 'layouts/header' %>
   <%= yield %>
   <%= render 'layouts/footer' %>
 </body>

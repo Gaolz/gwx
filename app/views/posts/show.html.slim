@@ -1,12 +1,9 @@
 .container
   #post_show
-    .panel.panel-default
-      .panel-heading
-        h3= emojify @post.title
-        span= @post.created_at.to_date.to_s
-        span ---
-        span= numbers_of_content @post
-        span words
-      .panel-body= emojify raw(@post.content)
-      .panel-footer
-        =link_to t('post.all'), posts_path
+    .post_show_title= emojify @post.title
+    p.post_time_words
+      span.updated_at= format_time @post.updated_at
+      span
+        = numbers_of_content @post
+        | &nbsp;words
+    .post-content= emojify raw(@post.content)

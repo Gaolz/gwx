@@ -1,13 +1,15 @@
 / pc: width:80%, text-align:center; mobile: width: 100%.
 .container
   #post_index
-    .panel.panel-default
-      .panel-heading= t('posts.index_title')
-      .panel-body
+    .panel-body
+      ul
         - @posts.each do |post|
-          ul
-            li
-              =link_to emojify(post.title), admin_post_path(post)
-              span.pull-right= post.created_at.to_date
-      .panel-footer
-        =link_to t('post.new'), new_admin_post_path
+          li
+            span.post_time_words
+              span.updated_at
+                = format_date post.updated_at
+              span
+                = numbers_of_content post
+                | &nbsp;words
+            .post_index_title=link_to emojify(post.title), admin_post_path(post)
+            section= truncate(strip_tags(post.content), length: 40)

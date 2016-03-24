@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :posts
-    resources :sessions, only: [:new, :create]
+    resources :sessions, only: [:new, :create, :destroy]
     root to: 'home#index'
   end
 

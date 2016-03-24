@@ -7,7 +7,7 @@ class Admin::PostsController < AdminController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to posts_path, notice: I18n.t('post.flash.create_success')
+      redirect_to admin_posts_path, notice: I18n.t('post.flash.create_success')
     else
       flash.now[:alert] = I18n.t('post.flash.blank_title_or_content')
       render :new
@@ -21,7 +21,7 @@ class Admin::PostsController < AdminController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to posts_path, notice: t('post.flash.update_success')
+      redirect_to admin_posts_path, notice: t('post.flash.update_success')
     else
       flash.now[:alert] = t('post.flash.blank_title_or_content')
       render :edit
@@ -38,7 +38,7 @@ class Admin::PostsController < AdminController
 
   def destroy
     @post = Post.find(params[:id])
-    redirect_to posts_path, notice: t('post.flash.destroy_success') if @post.destroy
+    redirect_to admin_posts_path, notice: t('post.flash.destroy_success') if @post.destroy
   end
 
   private

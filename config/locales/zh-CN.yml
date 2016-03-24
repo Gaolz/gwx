@@ -1,6 +1,6 @@
 'zh-CN':
   posts:
-    index_title: "广告列表"
+    index_title: "日志列表"
   post:
     new: "创建日志"
     new_form: "新建日志"
@@ -25,3 +25,4 @@
       username_error: '账号错误'
       password_error: '密码错误'
       login_success: '登录成功'
+      destroy_success: '成功退出'

@@ -1,8 +1,11 @@
-header#header
-  .container.yue
-    a#logo href='/'
-      strong To Be Water
-    nav#nav
-      = link_to "Archieves", admin_posts_path
-      = link_to "Log out", '#', method: :delete,\
-        data: { confirm: '确定要退出？' }, id: :admin_destroy
+header
+  #header
+    nav
+      ul.pull-left
+        = link_to '高老庄', admin_root_path
+        = link_to "管理日志", admin_posts_path
+        = link_to "新建日志", new_admin_post_path
+      ul.pull-right
+        = link_to "资料", '#'
+        = link_to "退出", admin_session_path(1), method: :delete,\
+          data: { confirm: '确定要退出？' }

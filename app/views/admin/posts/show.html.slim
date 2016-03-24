@@ -1,17 +1,15 @@
 .container
   #post_show
-    .panel.panel-default
-      .panel-heading
-        h3= emojify @post.title
-        span= @post.created_at.to_date.to_s
-        span ---
-        span= numbers_of_content @post
-        span words
-      .panel-body= emojify raw(@post.content)
-      .panel-footer
-        =link_to t('post.all'), admin_posts_path
-        =link_to t('post.edit_form'), edit_admin_post_path(@post),\
-          class: 'pull-right btn btn-sm btn-warning'
-        =link_to t('post.destroy_form'), admin_post_path(@post), method: :delete,\
-          class: 'pull-right btn btn-sm btn-danger', \
-          confirm: { data: t('post.are_you_sure_to_destroy') }
+    .post_show_title= emojify @post.title
+    p.post_time_words
+      span.updated_at= format_time @post.updated_at
+      span
+        = numbers_of_content @post
+        | &nbsp;words
+    .post-content= emojify raw(@post.content)
+    .post-footer
+      =link_to t('post.edit_form'), edit_admin_post_path(@post),\
+        class: 'pull-right btn btn-sm btn-warning'
+      =link_to t('post.destroy_form'), admin_post_path(@post), method: :delete,\
+        class: 'pull-right btn btn-sm btn-danger', \
+        confirm: { data: t('post.are_you_sure_to_destroy') }
