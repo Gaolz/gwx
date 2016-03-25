@@ -5,7 +5,7 @@
       span.updated_at= format_time @post.updated_at
       span
         = numbers_of_content @post
-        | &nbsp;words
+        | &nbsp;字
     .post-content= emojify raw(@post.content)
     .post-footer
       =link_to t('post.edit_form'), edit_admin_post_path(@post),\

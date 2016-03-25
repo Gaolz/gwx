@@ -9,7 +9,7 @@
                 = format_date post.updated_at
               span
                 = numbers_of_content post
-                | &nbsp;words
+                | &nbsp;字
             .post_index_title=link_to emojify(post.title), post
             section= truncate(strip_tags(post.content), length: 40)
     .post-footer

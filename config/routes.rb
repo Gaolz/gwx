@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     root to: 'home#index'
   end
 
+  get 'about' => 'home#about', as: :about
+
   # Example resource route with options:
   #   resources :products do
   #     member do

@@ -38,6 +38,33 @@ header { border-bottom: 1px solid #f9f9f9; }
   content: " — ";
 }
 
+#about{
+  max-width: 680px;
+  margin: 0 auto;
+  .about-title{
+    font-size: 20px;
+    margin: 20px 0;
+    padding: 14px 0 12px 0;
+    img{
+      border-radius: 100%;
+      margin-right:40px;
+    }
+  }
+  .about-title, .about-body{
+    border-bottom: 1px solid #f9f9f9;
+  }
+  .about-body, .about-contact{
+    section{margin:10px 0;}
+  }
+  a{
+    opacity: .6;
+    &:hover{
+      text-decoration: none;
+      opacity: 1;
+    }
+  }
+}
+
 #footer{
   max-width: 680px;
   margin: 0 auto 0 auto;

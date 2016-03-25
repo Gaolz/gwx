@@ -5,5 +5,5 @@
       span.updated_at= format_time @post.updated_at
       span
         = numbers_of_content @post
-        | &nbsp;words
+        | &nbsp;字
     .post-content= emojify raw(@post.content)
