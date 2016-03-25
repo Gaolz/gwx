@@ -29,7 +29,7 @@ class Admin::PostsController < AdminController
   end
 
   def index
-    @posts = Post.order(id: :desc).limit(20)
+    @posts = Post.order(id: :desc).page(params[:page]).per(5)
   end
 
   def show

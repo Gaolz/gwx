@@ -13,3 +13,5 @@
                 | &nbsp;words
             .post_index_title=link_to emojify(post.title), admin_post_path(post)
             section= truncate(strip_tags(post.content), length: 40)
+    .post-footer
+      = paginate @posts
