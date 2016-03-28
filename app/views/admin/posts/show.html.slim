@@ -12,4 +12,7 @@
         class: 'pull-right btn btn-sm btn-warning'
       =link_to t('post.destroy_form'), admin_post_path(@post), method: :delete,\
         class: 'pull-right btn btn-sm btn-danger', \
-        confirm: { data: t('post.are_you_sure_to_destroy') }
+        data: { confirm: t('post.are_you_sure_to_destroy') }
+    .post-prev-next style="margin-top:40px;"
+      .pull-left= link_to '上一篇', admin_post_path(@prev), class: 'btn' if @prev.present?
+      .pull-right= link_to '下一篇', admin_post_path(@next), class: 'btn' if @next.present?

@@ -38,6 +38,11 @@ header { border-bottom: 1px solid #f9f9f9; }
   content: " — ";
 }
 
+.alert {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
 #about{
   max-width: 680px;
   margin: 0 auto;

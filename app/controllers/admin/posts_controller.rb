@@ -34,6 +34,8 @@ class Admin::PostsController < AdminController
 
   def show
     @post = Post.find(params[:id])
+    @prev = Post.where('created_at > ?', @post.created_at).first
+    @next = Post.where('created_at < ?', @post.created_at).last
   end
 
   def destroy

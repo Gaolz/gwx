@@ -8,4 +8,4 @@ header
       ul.pull-right
         = link_to "资料", '#'
         = link_to "退出", admin_session_path(1), method: :delete,\
-          data: { confirm: '确定要退出？' }
+          data: { confirm: '确定要退出？' } if current_admin?

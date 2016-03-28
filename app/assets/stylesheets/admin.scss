@@ -24,3 +24,12 @@
 #home-index{
   max-width: 720px;
 }
+
+// admin session page
+#admin-session {
+  max-width: 400px;
+  margin: 0 auto;
+  .form-group {
+    label { margin-right: 10px; }
+  }
+}
