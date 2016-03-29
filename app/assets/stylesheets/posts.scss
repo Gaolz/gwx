@@ -66,9 +66,9 @@
 }
 
 /*
-  新建日志页面
+  新建日志页面, 修改日志页面
 */
-#post_new_form{
+#post_new_form,#post_edit_form{
   .panel-body{
     .form-group{
       label{display: block;}
@@ -146,13 +146,14 @@
   }
   .post_prev_next {
     a{
+      font-size:12px;
       background: #efefef;
       padding: 5px 10px;
       color: #000;
       text-decoration: none;
       &:hover {
         text-decoration: none;
-        opacity: .8;
+        opacity: .6;
       }
     }
   }

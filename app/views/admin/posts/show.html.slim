@@ -9,9 +9,9 @@
     .post-content= emojify raw(@post.content)
     .post_all_tags
       = raw tag_links(@post.all_tags)
-    .post-footer
+    .post-footer.text-center
       =link_to t('post.edit_form'), edit_admin_post_path(@post),\
-        class: 'pull-right btn btn-sm btn-warning'
-    .post_prev_next style="margin-top:40px;"
-      .pull-left= link_to '上一篇', admin_post_path(@prev), class: 'btn' if @prev.present?
-      .pull-right= link_to '下一篇', admin_post_path(@next), class: 'btn' if @next.present?
+        class: 'btn btn-warning'
+    .post_prev_next
+      .pull-left= link_to '上一篇', admin_post_path(@prev) if @prev.present?
+      .pull-right= link_to '下一篇', admin_post_path(@next) if @next.present?
