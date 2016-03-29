@@ -15,11 +15,11 @@ class Admin::PostsController < AdminController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = Post.find_by_url_title!(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
+    @post ||= Post.find_by_url_title!(params[:id])
     if @post.update(post_params)
       redirect_to admin_posts_path, notice: t('post.flash.update_success')
     else
@@ -41,11 +41,6 @@ class Admin::PostsController < AdminController
     @post = Post.find_by_url_title!(params[:id])
     @prev = Post.where('created_at > ?', @post.created_at).first
     @next = Post.where('created_at < ?', @post.created_at).last
-  end
-
-  def destroy
-    @post = Post.find(params[:id])
-    redirect_to admin_posts_path, notice: t('post.flash.destroy_success') if @post.destroy
   end
 
   private

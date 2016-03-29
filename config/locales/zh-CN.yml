@@ -5,7 +5,6 @@
     new: "创建日志"
     new_form: "新建日志"
     edit_form: "修改"
-    destroy_form: "删除"
     are_you_sure_to_destroy: "你确定要删除吗？"
     title: "标题"
     content: "内容"
@@ -15,7 +14,6 @@
     flash:
       create_success: "日志创建成功！"
       update_success: "日志修改成功！"
-      destroy_success: "已成功删除一条日志！"
       blank_title_or_content: "标题和内容都不能为空"
 
   admin:

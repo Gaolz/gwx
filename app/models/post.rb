@@ -19,7 +19,7 @@ class Post < ActiveRecord::Base
   has_many :taggings
   has_many :tags, through: :taggings
 
-  before_save { self.url_title = Pinyin.t(title, splitter: true) }
+  before_save { self.url_title = Pinyin.t(title, splitter: '-') }
 
   def to_param
     url_title

@@ -14,7 +14,6 @@
 #        admin_post GET    /admin/posts/:id(.:format)      admin/posts#show
 #                   PATCH  /admin/posts/:id(.:format)      admin/posts#update
 #                   PUT    /admin/posts/:id(.:format)      admin/posts#update
-#                   DELETE /admin/posts/:id(.:format)      admin/posts#destroy
 #    admin_sessions POST   /admin/sessions(.:format)       admin/sessions#create
 # new_admin_session GET    /admin/sessions/new(.:format)   admin/sessions#new
 #     admin_session DELETE /admin/sessions/:id(.:format)   admin/sessions#destroy
@@ -46,7 +45,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get 'tags/:tag', to: 'posts#index', as: :tag
-    resources :posts
+    resources :posts, except: [:destroy]
     resources :sessions, only: [:new, :create, :destroy]
     root to: 'home#index'
   end
