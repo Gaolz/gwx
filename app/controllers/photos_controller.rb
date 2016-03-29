@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: photos
+#
+#  id         :integer          not null, primary key
+#  image      :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class PhotosController < ApplicationController
   protect_from_forgery with: :null_session, only: proc { |c| c.request.format.json? }
   def upload

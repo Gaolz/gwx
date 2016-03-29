@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id         :integer          not null, primary key
+#  title      :string(30)       default("我的日志"), not null
+#  content    :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Post < ActiveRecord::Base
   validates :title, :content, presence: true
   has_many :photos
