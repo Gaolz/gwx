@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.find_by_url_title!(params[:id])
     @prev = Post.where('created_at > ?', @post.created_at).first
     @next = Post.where('created_at < ?', @post.created_at).last
   end

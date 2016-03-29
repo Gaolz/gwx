@@ -30,6 +30,7 @@ gem 'simditor'
 gem 'puma'
 gem 'yettings'
 gem 'kaminari'
+gem 'chinese_pinyin'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution

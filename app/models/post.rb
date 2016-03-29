@@ -10,10 +10,20 @@
 #
 
 class Post < ActiveRecord::Base
-  validates :title, :content, presence: true
+  require 'chinese_pinyin'
+
+  validates :title, presence: true, uniqueness: true
+  validates :url_title, presence: true, uniqueness: true
+  validates :content, presence: true
   has_many :photos
   has_many :taggings
   has_many :tags, through: :taggings
+
+  before_save { self.url_title = Pinyin.t(title, splitter: true) }
+
+  def to_param
+    url_title
+  end
 
   def self.tagged_with(name)
     Tag.find_by_name(name).try(:posts)
