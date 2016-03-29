@@ -2,17 +2,18 @@
 .container
   #post_index
     .panel-body
+      - if @posts_count
+        h1 Archive
+        p
+          span= pluralize @posts_count, 'entry'
+          | used the
+          strong= params[:tag]
+          | tag.
       ul
         - @posts.each do |post|
           li
-            span.post_time_words
-              span.updated_at
-                = format_date post.updated_at
-              span
-                = numbers_of_content post
-                | &nbsp;字
-            .post_index_title=link_to emojify(post.title), admin_post_path(post)
-            section= truncate(strip_tags(post.content), length: 40)
+            time.post_time_words= format_date post.updated_at
+            span.post_index_title=link_to emojify(post.title), admin_post_path(post)
     .post-footer
       .text-center
         = paginate @posts

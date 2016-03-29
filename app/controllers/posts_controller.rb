@@ -1,6 +1,11 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.order(id: :desc).page(params[:page]).per(5)
+    if params[:tag]
+      @posts_count = Tagging.post_count(params[:tag])
+      @posts = Post.tagged_with(params[:tag]).page(params[:page]).per(5)
+    else
+      @posts = Post.order(id: :desc).page(params[:page]).per(5)
+    end
   end
 
   def show

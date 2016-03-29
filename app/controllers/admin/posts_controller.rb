@@ -29,7 +29,12 @@ class Admin::PostsController < AdminController
   end
 
   def index
-    @posts = Post.order(id: :desc).page(params[:page]).per(5)
+    if params[:tag]
+      @posts_count = Tagging.post_count(params[:tag])
+      @posts = Post.tagged_with(params[:tag]).page(params[:page]).per(5)
+    else
+      @posts = Post.order(id: :desc).page(params[:page]).per(5)
+    end
   end
 
   def show
@@ -46,6 +51,6 @@ class Admin::PostsController < AdminController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :all_tags)
   end
 end

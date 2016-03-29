@@ -1,0 +1,17 @@
+.container
+  #home_index
+    .panel-body
+      ul
+        - @posts.each do |post|
+          li
+            span.post_time_words
+              span.updated_at
+                = format_date post.updated_at
+              span
+                = numbers_of_content post
+                | &nbsp;字
+            .post_index_title=link_to emojify(post.title), post
+            section= truncate(strip_tags(post.content), length: 40)
+    .post-footer
+      .text-center
+        = paginate @posts

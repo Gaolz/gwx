@@ -21,4 +21,24 @@ module PostHelper
       end
     end
   end
+
+  def tag_links(tags)
+    if current_admin?
+      tags.split(',').map do |tag|
+        link_to tag.strip, admin_tag_path(tag.strip)
+      end.join(' ')
+    else
+      tags.split(',').map do |tag|
+        link_to tag.strip, tag_path(tag.strip)
+      end.join(' ')
+    end
+  end
+
+  def tag_cloud(tags, classes)
+    max = tags.sort_by(&:count).last
+    tags.each do |tag|
+      index = tag.count.to_f / max.count * (classes.size - 1)
+      yield(tag, claaes[index.round])
+    end
+  end
 end

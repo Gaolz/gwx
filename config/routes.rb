@@ -13,13 +13,15 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  root 'posts#index'
+  root 'home#index'
 
+  get 'tags/:tag', to: 'posts#index', as: :tag
   resources :posts, only: [:show, :index]
 
   post 'photo' => 'photos#upload'
 
   namespace :admin do
+    get 'tags/:tag', to: 'posts#index', as: :tag
     resources :posts
     resources :sessions, only: [:new, :create, :destroy]
     root to: 'home#index'

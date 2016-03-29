@@ -7,6 +7,8 @@
         = numbers_of_content @post
         | &nbsp;字
     .post-content= emojify raw(@post.content)
+    .post_all_tags
+      = raw tag_links(@post.all_tags)
     .post-footer
       =link_to t('post.edit_form'), edit_admin_post_path(@post),\
         class: 'pull-right btn btn-sm btn-warning'

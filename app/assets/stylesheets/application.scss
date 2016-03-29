@@ -14,7 +14,7 @@
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
-@import 'post';
+@import 'posts';
 @import 'admin';
 @import 'simditor';
 @import 'simditor/simditor-emoji';
@@ -32,19 +32,19 @@ body{
   background:#fff none repeat scroll 0% 0%;
 }
 
-header { border-bottom: 1px solid #f9f9f9; }
+header { border-bottom: 1px solid #eee; }
 
 .updated_at:after{
   content: " — ";
 }
 
 .alert {
-  max-width: 480px;
+  max-width: 580px;
   margin: 0 auto;
 }
 
 #about{
-  max-width: 680px;
+  max-width: 580px;
   margin: 0 auto;
   .about-title{
     font-size: 20px;
@@ -56,7 +56,7 @@ header { border-bottom: 1px solid #f9f9f9; }
     }
   }
   .about-title, .about-body{
-    border-bottom: 1px solid #f9f9f9;
+    border-bottom: 1px solid #eee;
   }
   .about-body, .about-contact{
     section{margin:10px 0;}
@@ -70,10 +70,12 @@ header { border-bottom: 1px solid #f9f9f9; }
   }
 }
 
-#footer{
-  max-width: 680px;
-  margin: 0 auto 0 auto;
-  padding: 20px 0;
-  border-top: 1px solid #f9f9f9;
-  @include small-text;
+footer {
+  border-top: 1px solid #eee;
+  #footer{
+    max-width: 580px;
+    margin: 0 auto 0 auto;
+    padding: 20px 0;
+    @include small-text;
+  }
 }

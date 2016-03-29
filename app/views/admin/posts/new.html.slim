@@ -3,5 +3,5 @@
   #post_new_form
     .panel
       .panel-body
-        = form_for @post, url: admin_post_path(1) do |f|
+        = form_for @post, url: admin_posts_path do |f|
           = render 'form', f: f
