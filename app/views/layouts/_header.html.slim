@@ -1,5 +1,6 @@
 header
   #header
+    .logo= link_to 'GLZ', root_path
     nav
-      strong.pull-left.logo= link_to "GLZ", root_path
-      strong.pull-right= link_to "About", about_path
+      .pull-left= link_to 'Posts', posts_path
+      .pull-right= link_to "About", about_path

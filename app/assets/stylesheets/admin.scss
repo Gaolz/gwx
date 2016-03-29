@@ -1,4 +1,4 @@
-#header {
+#admin-header {
   padding: 10px 0;
   margin: 0 auto;
   max-width: 720px;
@@ -11,7 +11,7 @@
       padding-bottom: 3px;
       border-bottom: 2px solid transparent;
       &:hover{
-        border-color: rgba(0, 125, 125, .8);
+        border-color: rgba(0, 125, 125, .7);
         text-decoration: none;
       }
     }
