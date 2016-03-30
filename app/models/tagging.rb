@@ -8,6 +8,11 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+# Indexes
+#
+#  index_taggings_on_post_id  (post_id)
+#  index_taggings_on_tag_id   (tag_id)
+#
 
 class Tagging < ActiveRecord::Base
   belongs_to :post

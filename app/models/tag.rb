@@ -7,6 +7,10 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+# Indexes
+#
+#  index_tags_on_name  (name)
+#
 
 class Tag < ActiveRecord::Base
   validates :name, uniqueness: true

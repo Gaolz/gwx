@@ -6,6 +6,9 @@
       span
         = numbers_of_content @post
         | &nbsp;字
+      span
+        = @post.visited_count
+        | &nbsp;次浏览
     .post-content= emojify raw(@post.content)
     .post_all_tags
       = raw tag_links(@post.all_tags)
