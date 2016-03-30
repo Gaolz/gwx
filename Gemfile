@@ -51,3 +51,7 @@ group :development do
   gem 'quiet_assets'
   gem 'brakeman', require: false
 end
+
+group :test do
+  gem 'simplecov', require: false
+end
