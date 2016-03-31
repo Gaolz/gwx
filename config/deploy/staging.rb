@@ -19,8 +19,6 @@
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
-server '115.28.137.197', user: 'glz', roles: %w(web app db)
-
 # Configuration
 # =============
 # You can set any configuration variable like in config/deploy.rb
