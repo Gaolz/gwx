@@ -38,6 +38,8 @@ group :development, :test do
   # and get a debugger console
   gem 'byebug'
   gem 'rubocop'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -59,9 +61,10 @@ group :development do
 end
 
 group :test do
+  gem 'faker', '~> 1.6.3'
+  gem 'capybara', '~> 2.6.2'
+  gem 'database_cleaner', '~> 1.5.1'
+  gem 'shoulda-matchers', '~> 3.1'
   gem 'simplecov', require: false
-  gem 'minitest-rails', '~> 2.2.0'
-  gem 'minitest-rails-capybara'
-  gem 'minitest-focus'
-  gem "minitest-reporters"
+  gem 'mocha', require: false
 end
