@@ -57,3 +57,11 @@ group :development do
   gem 'quiet_assets'
   gem 'brakeman', require: false
 end
+
+group :test do
+  gem 'simplecov', require: false
+  gem 'minitest-rails', '~> 2.2.0'
+  gem 'minitest-rails-capybara'
+  gem 'minitest-focus'
+  gem "minitest-reporters"
+end

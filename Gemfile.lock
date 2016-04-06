@@ -36,9 +36,11 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     annotate (2.6.5)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
+    ansi (1.5.0)
     arel (6.0.3)
     ast (2.2.0)
     autoprefixer-rails (6.3.5)
@@ -76,6 +78,13 @@ GEM
     capistrano3-puma (1.2.1)
       capistrano (~> 3.0)
       puma (>= 2.6)
+    capybara (2.6.2)
+      addressable
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -92,6 +101,7 @@ GEM
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.1)
     debug_inspector (0.0.2)
+    docile (1.1.5)
     erubis (2.7.0)
     execjs (2.6.0)
     gemoji (2.1.0)
@@ -123,6 +133,27 @@ GEM
     mini_magick (4.3.6)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
+    minitest-capybara (0.7.2)
+      capybara (~> 2.2)
+      minitest (~> 5.0)
+      rake
+    minitest-focus (1.1.2)
+      minitest (>= 4, < 6)
+    minitest-metadata (0.5.3)
+      minitest (>= 4.7, < 6.0)
+    minitest-rails (2.2.0)
+      minitest (~> 5.7)
+      railties (~> 4.1)
+    minitest-rails-capybara (2.1.1)
+      capybara (~> 2.0)
+      minitest-capybara (~> 0.7.0)
+      minitest-metadata (~> 0.5.0)
+      minitest-rails (~> 2.1)
+    minitest-reporters (1.1.8)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
     multi_json (1.11.2)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -201,6 +232,11 @@ GEM
       rdoc (~> 4.0)
     sexp_processor (4.7.0)
     simditor (2.3.6)
+    simplecov (0.11.2)
+      docile (~> 1.1.0)
+      json (~> 1.8)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.0)
     slim (3.0.6)
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
@@ -239,6 +275,8 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
     yettings (0.1.1)
 
 PLATFORMS
@@ -262,6 +300,10 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mini_magick (~> 4.3.0)
+  minitest-focus
+  minitest-rails (~> 2.2.0)
+  minitest-rails-capybara
+  minitest-reporters
   pg (~> 0.15)
   pry-rails
   puma
@@ -272,6 +314,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simditor
+  simplecov
   slim-rails
   spring
   turbolinks
