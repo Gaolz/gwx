@@ -21,11 +21,8 @@ class Post < ActiveRecord::Base
   validates :title, presence: true, uniqueness: true
   validates :url_title, presence: true, uniqueness: true
   validates :content, presence: true
-  has_many :photos
   has_many :taggings
   has_many :tags, through: :taggings
-
-  before_save { self.url_title = Pinyin.t(title, splitter: '-') }
 
   def to_param
     url_title

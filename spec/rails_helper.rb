@@ -5,6 +5,7 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
+require 'faker'
 require 'database_cleaner'
 
 require 'simplecov'
@@ -59,4 +60,22 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  config.render_views
+
+  config.before(:each) do
+    DatabaseCleaner.orm = :active_record
+    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.clean
+    Rails.cache.clear
+  end
+
+  config.include FactoryGirl::Syntax::Methods
+end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+
+    with.library :rails
+  end
 end

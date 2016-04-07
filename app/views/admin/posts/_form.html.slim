@@ -1,7 +1,9 @@
 .form-group
-  = f.text_field :title, placeholder: t('post.title'), class: "form-control"
+  = f.text_field :title, placeholder: t('post.title'), class: 'form-control'
 .form-group
-  = f.text_area :content, placeholder: t('post.content'), autofocus: true, rows: 20, id: "editor", class: "form-control"
+  = f.text_field :url_title, placeholder: t('post.url_title'), class: 'form-control'
+.form-group
+  = f.text_area :content, placeholder: t('post.content'), autofocus: true, rows: 20, id: 'editor', class: 'form-control'
 .form-group
   = f.text_field :all_tags, placeholder: t('post.all_tags'), class: 'form-control'
 .form-group

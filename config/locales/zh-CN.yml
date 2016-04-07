@@ -6,6 +6,7 @@
     edit_form: "修改日志"
     are_you_sure_to_destroy: "你确定要删除吗？"
     title: "标题"
+    url_title: "标题地址"
     content: "内容"
     submit: "发表"
     all_tags: "标签名(用逗号隔开)"
