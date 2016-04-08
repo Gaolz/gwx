@@ -1,9 +1,9 @@
 # encoding : utf-8
 require 'rails_helper'
 
-describe Post do
+describe Post, type: :model do
   before :each do
-    @post = FactoryGirl.create(:post)
+    @post = create(:post)
   end
 
   subject { @post }

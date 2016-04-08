@@ -19,7 +19,7 @@ class Tagging < ActiveRecord::Base
   belongs_to :tag
 
   def self.post_count(tag_name)
-    tag_id = Tag.find_by_name(tag_name).id
+    tag_id = Tag.find_by_name(tag_name).try(:id)
     where(tag_id: tag_id).count
   end
 end
