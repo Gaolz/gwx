@@ -138,6 +138,9 @@
     @include small-text;
     border-bottom: 1px solid #f9f9f9;
   }
+  .post-content {
+    p { line-height: 26px; }
+  }
   .post_all_tags {
     margin: 20px 0 10px 0;
     border-bottom: 1px solid #f9f9f9;
