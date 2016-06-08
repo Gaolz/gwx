@@ -1,0 +1,8 @@
+h3 Edit account
+
+.form-group
+  = form_for @account, url: admin_account_path, method: :put do |f|
+    = f.text_field :description, class: "form-control"
+    = f.text_field :price, class: "form-control"
+    = f.datetime_select :created_at, class: "form-control"
+    = f.submit "提交修改", class: "form-control"

@@ -48,6 +48,8 @@ Rails.application.routes.draw do
     resources :posts, except: [:destroy]
     resources :sessions, only: [:new, :create, :destroy]
     root to: 'home#index'
+
+    resources :accounts
   end
 
   get 'about' => 'home#about', as: :about

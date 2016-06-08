@@ -1,0 +1,20 @@
+<h3>New accounts</h3>
+<%= render partial: 'new' %>
+<h3>List accounts</h3>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <th>ID</th>
+      <th>事项</th>
+      <th>金额</th>
+      <th>时间</th>
+    </thead>
+    <% @accounts.each do |account| %>
+      <tbody>
+        <td><%= account.id %></td>
+        <td><%= account.description %></td>
+        <td><%= account.price %> 元</td>
+        <td><%= account.created_at %></td>
+        <td><%= link_to "修改", edit_admin_account_path(account) %></td>
+      </tbody>
+    <% end %>
+ </table>
