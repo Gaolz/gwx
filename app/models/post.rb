@@ -15,7 +15,7 @@
 #  index_posts_on_url_title  (url_title)
 #
 
-class Post < ActiveRecord::Base
+class Post < ApplicationRecord
   require 'chinese_pinyin'
 
   validates :title, presence: true, uniqueness: true

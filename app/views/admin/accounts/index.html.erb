@@ -1,20 +1,29 @@
-<h3>New accounts</h3>
-<%= render partial: 'new' %>
-<h3>List accounts</h3>
-  <table class="table table-bordered table-hover">
-    <thead>
-      <th>ID</th>
-      <th>事项</th>
-      <th>金额</th>
-      <th>时间</th>
-    </thead>
-    <% @accounts.each do |account| %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h3>新建记账</h3>
+    <%= render partial: 'new' %>
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>事项</th>
+          <th>金额</th>
+          <th>时间</th>
+          <th>管理</th>
+        </tr>
+      </thead>
       <tbody>
-        <td><%= account.id %></td>
-        <td><%= account.description %></td>
-        <td><%= account.price %> 元</td>
-        <td><%= account.created_at %></td>
-        <td><%= link_to "修改", edit_admin_account_path(account) %></td>
+        <% @accounts.each do |account| %>
+          <tr>
+            <td><%= account.id %></td>
+            <td><%= account.description %></td>
+            <td><%= account.price %> 元</td>
+            <td><%= account.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+            <td><%= link_to "修改", edit_admin_account_path(account) %></td>
+          </tr>
+        <% end %>
       </tbody>
-    <% end %>
- </table>
+   </table>
+   <div class="text-center"><%= paginate @accounts %></div>
+  </div>
+</div>

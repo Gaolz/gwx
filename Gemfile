@@ -1,71 +1,68 @@
-source 'https://gems.ruby-china.org'
+source 'https://ruby.taobao.org'
 
-gem 'rails', '4.2.5.1'
-gem 'rails-i18n'
-gem 'pg', '~> 0.15'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'rails', '5.0.0'
+gem 'rails-i18n', '5.0.0'
+gem 'pg', '0.18.4'
+gem 'sass-rails', '5.0.6'
+gem 'uglifier', '3.0.0'
+gem 'coffee-rails', '4.2.1'
+gem 'jquery-rails', '4.1.1'
+gem 'turbolinks', '5.0.0'
+gem 'jbuilder', '2.4.1'
 
 # uploader
-gem 'carrierwave'
-gem 'mini_magick', '~> 4.3.0', require: false
+gem 'carrierwave', '0.11.2'
+gem 'mini_magick', '4.5.1', require: false
 
 # add emoji
-gem 'gemoji'
+gem 'gemoji', '2.1.0'
 
 # use slim as template
-gem 'slim-rails'
+gem 'slim-rails', '3.1.0'
 
 # use bootstrap as css framework
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass', '3.3.7'
 
 # simditor as blog editor
-gem 'simditor'
+gem 'simditor', '2.3.6'
 
-gem 'puma'
-gem 'yettings'
-gem 'kaminari'
-gem 'chinese_pinyin'
-gem 'annotate'
-gem 'erd'
+gem 'puma', '3.6.0'
+gem 'yettings', '0.1.1'
+gem 'kaminari', '0.17.0'
+gem 'chinese_pinyin', '1.0.1'
+gem 'annotate', '2.7.1'
+gem 'erd', '0.4.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution
   # and get a debugger console
-  gem 'byebug'
-  gem 'rubocop'
-  gem 'rspec-rails', '~> 3.5.0.beta3'
-  gem 'factory_girl_rails'
+  gem 'byebug', '9.0.0', platform: :mri
+  gem 'rubocop', '0.42.0'
+  gem 'rspec-rails', '3.5.1'
+  gem 'factory_girl_rails', '4.7.0'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '3.3.1'
 
-  gem 'capistrano', '~> 3.4.0'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano-rbenv'
-  gem 'capistrano3-puma'
+  gem 'capistrano', '~> 3.6.0'
+  gem 'capistrano-bundler', '1.1.4'
+  gem 'capistrano-rails', '1.1.7'
+  gem 'capistrano-rbenv', '2.0.4'
+  gem 'capistrano3-puma', '1.2.1'
 
   # Spring speeds up development by keeping your application running
   # in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'pry-rails'
-  gem 'quiet_assets'
-  gem 'brakeman', require: false
+  gem 'spring', '1.7.2'
+  gem 'pry-rails', '0.3.4'
+  gem 'rack-mini-profiler', '0.10.1', require: false
 end
 
 group :test do
-  gem 'faker', '~> 1.6.3'
-  gem 'capybara', '~> 2.6.2'
-  gem 'database_cleaner', '~> 1.5.1'
-  gem 'shoulda-matchers', '~> 3.1'
-  gem 'simplecov', require: false
-  gem 'mocha', require: false
+  gem 'faker', '1.6.6'
+  gem 'capybara', '2.7.1'
+  gem 'database_cleaner', '1.5.3'
+  gem 'shoulda-matchers', '3.1.1'
+  gem 'simplecov', '0.12.0', require: false
 end

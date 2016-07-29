@@ -3,7 +3,7 @@ class Admin::AccountsController < AdminController
 
   def index
     @account = Account.new
-    @accounts = Account.order("ID DESC")
+    @accounts = Account.order("ID DESC").page(params[:page]).per(10)
   end
 
   def create

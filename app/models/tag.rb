@@ -12,7 +12,7 @@
 #  index_tags_on_name  (name)
 #
 
-class Tag < ActiveRecord::Base
+class Tag < ApplicationRecord
   validates :name, uniqueness: true
   has_many :taggings
   has_many :posts, through: :taggings

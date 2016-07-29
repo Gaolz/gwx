@@ -47,7 +47,7 @@ Rails.application.routes.draw do
     get 'tags/:tag', to: 'posts#index', as: :tag
     resources :posts, except: [:destroy]
     resources :sessions, only: [:new, :create, :destroy]
-    root to: 'home#index'
+    root to: 'home#index', as: :root
 
     resources :accounts
   end

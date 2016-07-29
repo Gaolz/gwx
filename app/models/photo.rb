@@ -8,7 +8,7 @@
 #  updated_at :datetime         not null
 #
 
-class Photo < ActiveRecord::Base
+class Photo < ApplicationRecord
   validates :image, presence: true
   mount_uploader :image, PhotoUploader
 end

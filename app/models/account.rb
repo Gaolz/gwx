@@ -8,5 +8,5 @@
 #  created_at  :datetime         not null
 #
 
-class Account < ActiveRecord::Base
+class Account < ApplicationRecord
 end
