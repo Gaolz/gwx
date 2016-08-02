@@ -50,6 +50,8 @@ Rails.application.routes.draw do
     root to: 'home#index', as: :root
 
     resources :accounts
+    resources :settings
+    resources :users
   end
 
   get 'about' => 'home#about', as: :about

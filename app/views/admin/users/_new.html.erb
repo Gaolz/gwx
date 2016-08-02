@@ -1,0 +1,14 @@
+<%= form_for @user, url: admin_users_path do |f| %>
+  <%= f.text_field :name, placeholder: "姓名" %>
+  <%= f.text_field :pinyin, placeholder: "拼音" %>
+  <%= f.text_field :birthday %>
+  <div class="form-group">
+    <%= f.label :Gender %> <br />
+    <%= f.label :Gender_male, 'male' %>
+    <%= f.radio_button :gender, 'male', :checked => true %>
+    <%= f.label :Gender_female, 'female' %>
+    <%= f.radio_button :gender, 'female' %><br />
+  </div>
+  <%= f.text_field :mobile, placeholder: "手机" %>
+  <%= f.submit "提交" %>
+<% end %>

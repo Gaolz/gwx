@@ -32,6 +32,7 @@ gem 'kaminari', '0.17.0'
 gem 'chinese_pinyin', '1.0.1'
 gem 'annotate', '2.7.1'
 gem 'erd', '0.4.0'
+gem 'rails-settings-cached', '0.6.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution

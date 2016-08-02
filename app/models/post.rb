@@ -8,7 +8,7 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  url_title     :string
-#  visited_count :integer          default("0"), not null
+#  visited_count :integer          default(0), not null
 #
 # Indexes
 #
