@@ -115,3 +115,10 @@ footer {
     @include small-text;
   }
 }
+
+/* admin */
+
+.admin_user_form {
+  padding-top: 10px;
+  border: 1px solid #ddd;
+}

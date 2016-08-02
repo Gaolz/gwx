@@ -1,6 +1,7 @@
-<div class="row"> 
-  <div class="col-md-6 col-md-offset-3 admin_user_form">
-    <%= form_for @user, url: admin_users_path do |f| %>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-4 admin_user_form">
+    <%= form_for @user, url: admin_user_path, method: :patch do |f| %>
       <div class="form-group">
         <label>姓名：</label>
         <%= f.text_field :name, class: "form-control" %>
@@ -14,14 +15,14 @@
         <%= f.label :Gender_female, '女' %>
         <%= f.radio_button :gender, false %>
         <%= f.label :Gender_male, '男' %>
-        <%= f.radio_button :gender, true, :checked => true %>
+        <%= f.radio_button :gender, true %>
       </div>
       <div class="form-group">
         <label>电话号码：</label>
         <%= f.phone_field :mobile, class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.submit "添加", class: "btn btn-info" %>
+        <%= f.submit "修改", class: "btn btn-info" %>
       </div>
     <% end %>
   </div>
