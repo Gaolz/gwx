@@ -1,12 +1,19 @@
-<table>
-  <tr>
-    <th>Key</th>
-    <th></th>
-  </tr>
-  <% @settings.each_key do |key| %>
-    <tr>
-      <td><%= key %></td>
-      <td><%= link_to 'edit', edit_admin_setting_path(key) %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= render partial: "new" %>
+    <table class="table table-bordered table-hover">
+      <tr>
+        <th>Key</th>
+        <th>Value</th>
+        <th></th>
+      </tr>
+      <% @settings.each do |setting| %>
+        <tr>
+          <td><%= setting.var %></td>
+          <td><%= setting.value.inspect %></td>
+          <td><%= link_to 'x', admin_setting_path(setting.id), method: :delete %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -11,11 +11,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render 'admin/header' %>
-  <div class="container">
-    <%= notice_message %>
+  <div id="container">
+    <div id="sidebar">
+      <nav class="navbar-collapse bs-navbar-collapse collapse">
+        <h3><p class="text-center">控制台</p></h3>
+        <ul class="nav navbar-nav">
+          <li><%= link_to "高老庄", admin_root_path %></li>
+          <li><%= link_to "日志", admin_posts_path %></li>
+          <li><%= link_to "家人", admin_users_path %></li>
+          <li><%= link_to "支出", admin_accounts_path %></li>
+          <li><%= link_to "settings", admin_settings_path %></li>
+          <li><%= link_to "退出", admin_session_path(1), method: :delete, data: { confirm: "确定退出？" } if current_admin? %></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="contents">
+      <%= render partial: 'header' %>
+      <div class="container"><%= notice_message %></div>
+      <%= yield %>
+    </div>
   </div>
-  <%= yield %>
-  <%= render 'layouts/footer' %>
 </body>
 </html>

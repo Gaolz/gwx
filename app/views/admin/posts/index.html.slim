@@ -1,14 +1,7 @@
-/ pc: width:80%, text-align:center; mobile: width: 100%.
-.container
+.container-fluid
   #post_index
     .panel-body
-      - if @posts_count
-        h1 Archive
-        p
-          span= pluralize @posts_count, 'entry'
-          | used the
-          strong= params[:tag]
-          | tag.
+      p.text-center= link_to '+', new_admin_post_path, class: "btn btn-success"
       ul
         - @posts.each do |post|
           li

@@ -1,11 +1,4 @@
 header
   #admin-header
-    nav
-      ul.pull-left
-        = link_to '高老庄', admin_root_path
-        = link_to "管理日志", admin_posts_path
-        = link_to "新建日志", new_admin_post_path
-      ul.pull-right
-        = link_to "资料", '#'
-        = link_to "退出", admin_session_path(1), method: :delete,\
-          data: { confirm: '确定要退出？' } if current_admin?
+    h4.text-center
+      | 知人者智，自知者明

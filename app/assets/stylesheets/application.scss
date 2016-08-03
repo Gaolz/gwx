@@ -28,8 +28,15 @@
   font-size: 10px;
 }
 
+html, body, #container, #sidebar, #contents{
+  height: 100%;
+}
+
 body{
-  background:#fff none repeat scroll 0% 0%;
+  background: #e9eaed;
+  // background:#fff none repeat scroll 0% 0%;
+  padding: 0;
+  margin: 0;
 }
 
 header {
@@ -114,11 +121,4 @@ footer {
     padding: 20px 0;
     @include small-text;
   }
-}
-
-/* admin */
-
-.admin_user_form {
-  padding-top: 10px;
-  border: 1px solid #ddd;
 }

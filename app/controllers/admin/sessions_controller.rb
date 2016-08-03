@@ -1,5 +1,7 @@
 class Admin::SessionsController < AdminController
+
   def new
+    render layout: 'application'
   end
 
   def create

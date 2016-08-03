@@ -1,5 +1,7 @@
-<%= form_for @account, url: admin_accounts_path do |f| %>
-  <%= f.text_field :description, placeholder: "事项" %>
-  <%= f.text_field :price, placeholder: "金额" %>
-  <%= f.submit "提交" %>
-<% end %>
+<div style="margin: 10px 0;">
+  <%= form_for @account, url: admin_accounts_path do |f| %>
+    <%= f.text_field :description, placeholder: "事项" %>
+    <%= f.text_field :price, placeholder: "金额" %>
+    <%= f.submit "新增开支" %>
+  <% end %>
+</div>

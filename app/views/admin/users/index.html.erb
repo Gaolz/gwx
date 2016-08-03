@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row admin_user_index">
   <div class="col-md-4">
     <%= render partial: 'new' %>
   </div>
@@ -18,7 +18,7 @@
       <tbody>
         <% @users.each do |user| %>
           <tr>
-            <td><%= image_tag letter_avatar_url(user.pinyin, 50) %></td>
+            <td><%= image_tag letter_avatar_url(user.pinyin, 30) %></td>
             <td><%= user.name %></td>
             <td><%= user.pinyin %></td>
             <td><%= I18n.t "users.gender.#{user.sex}" %></td>
