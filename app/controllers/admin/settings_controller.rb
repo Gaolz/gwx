@@ -1,6 +1,6 @@
 class Admin::SettingsController < AdminController
   before_action :admin_required
-  # http_basic_authenticate_with name: Setting.admin_login, password: Setting.admin_pass
+  http_basic_authenticate_with name: Setting.admin_login, password: Setting.admin_pass
 
   def index
     @settings = Setting.all
