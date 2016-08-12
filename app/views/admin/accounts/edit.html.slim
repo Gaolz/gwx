@@ -1,8 +1,14 @@
-h3 Edit account
+.container
+  .row
+    .col-md-6.col-md-offset-3
+      h3.text-center 修改账单
 
-.form-group
-  = form_for @account, url: admin_account_path, method: :put do |f|
-    = f.text_field :description, class: "form-control"
-    = f.text_field :price, class: "form-control"
-    = f.datetime_select :created_at, class: "form-control"
-    = f.submit "提交修改", class: "form-control"
+      = form_for @account, url: admin_account_path, method: :put do |f|
+        .form-group
+          = f.text_field :description, class: "form-control"
+        .form-group
+          = f.text_field :price, class: "form-control"
+        .form-group
+          = f.datetime_select :created_at, class: "form-control"
+        .form-group
+          = f.submit "提交修改", class: "form-control"
