@@ -11,7 +11,7 @@
       ul
         - @posts.each do |post|
           li
-            time.post_time_words= format_date post.updated_at
+            time.post_time_words= format_date post.created_at
             span.post_index_title=link_to emojify(post.title), post
     .post-footer
       .text-center
