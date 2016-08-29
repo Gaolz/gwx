@@ -15,6 +15,9 @@ gem 'carrierwave', '0.11.2'
 gem 'mini_magick', '4.5.1', require: false
 gem 'letter_avatar', '0.3.0'
 
+# cron job
+gem 'whenever', '0.9.7', require: false
+
 # add emoji
 gem 'gemoji', '2.1.0'
 
