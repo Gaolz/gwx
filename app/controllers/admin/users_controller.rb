@@ -29,7 +29,7 @@ class Admin::UsersController < AdminController
 
   private
     def user_params
-      params.require(:user).permit(:name, :pinyin, :birthday, :gender, :icon, :mobile)
+      params.require(:user).permit(:name, :pinyin, :created_at, :birthday, :gender, :icon, :mobile)
     end
 
     def set_user
