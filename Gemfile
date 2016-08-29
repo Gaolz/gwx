@@ -18,6 +18,12 @@ gem 'letter_avatar', '0.3.0'
 # cron job
 gem 'whenever', '0.9.7', require: false
 
+# background-work
+gem 'sucker_punch', '2.0.2'
+
+# sms
+gem 'china_sms', '0.0.7'
+
 # add emoji
 gem 'gemoji', '2.1.0'
 

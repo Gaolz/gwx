@@ -22,6 +22,6 @@ require File.expand_path(File.dirname(__FILE__) + "/environment")
 
 set :output, { error: 'log/cron_error.log', standard: 'log/cron.log' }
 
-every :day, at: '17:20' do
+every :day, at: '7:00' do
   rake "glz:birth"
 end

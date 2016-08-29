@@ -6,4 +6,8 @@ class User < ApplicationRecord
   def sex
     gender ? 'male' : 'female'
   end
+
+  def zh_sex
+    gender ? '他' : '她'
+  end
 end

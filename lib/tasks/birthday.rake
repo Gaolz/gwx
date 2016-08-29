@@ -11,6 +11,7 @@ namespace :glz do
     if birthdays.present?
       birthdays.each do |birthday|
         user = User.find birthday[0]
+        BirthdayMessageJob.perform_async(user.id)
         Rails.logger.info "*******今天是#{user.name}的生日!!!***********"
       end
     end
