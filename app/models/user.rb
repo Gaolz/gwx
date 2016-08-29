@@ -10,4 +10,8 @@ class User < ApplicationRecord
   def zh_sex
     gender ? '他' : '她'
   end
+
+  def age
+    birthday.year - created_at.year
+  end
 end
