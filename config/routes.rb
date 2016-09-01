@@ -52,6 +52,7 @@ Rails.application.routes.draw do
     resources :accounts
     resources :settings
     resources :users
+    resources :words
   end
 
   get 'about' => 'home#about', as: :about

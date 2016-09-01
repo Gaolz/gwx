@@ -29,4 +29,8 @@ module ApplicationHelper
   def action?(*action)
     action.include?(params[:action])
   end
+
+  def word_color
+    "bg-".concat %w(primary success info warning danger).sample
+  end
 end
