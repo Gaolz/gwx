@@ -4,7 +4,7 @@ class Admin::UsersController < AdminController
 
   def index
     @user = User.new
-    @users = User.page(params[:page]).per(20)
+    @users = User.order(:birthday).page(params[:page]).per(20)
   end
 
   def create
