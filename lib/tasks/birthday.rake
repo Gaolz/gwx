@@ -13,8 +13,7 @@ namespace :glz do
         user = User.find birthday[0]
         BirthdayMessageJob.perform_async(user.id)
         Rails.logger.info "*******今天是#{user.name}的生日!!!***********"
-        user.birthday.change(year: user.birthday.year+1)
-        user.save!
+        user.update!(birthday: user.birthday + 1.year)
       end
     end
   end
