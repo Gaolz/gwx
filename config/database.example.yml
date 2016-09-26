@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username:
+  password:
+
+development:
+  <<: *default
+  database: gwx_development
+
+test:
+  <<: *default
+  database: gwx_test
+
+production:
+  <<: *default
+  database: gwx_production

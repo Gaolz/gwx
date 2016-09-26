@@ -1,0 +1,16 @@
+defaults: &defaults
+  app_name: 'GLZ'
+  admin: 'admin@xample.com'
+  admin_password: 'password'
+  admin_mobile: '10000'
+  admin_session_login: 'admin'
+  yunpian_password: 'yunpian'
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
