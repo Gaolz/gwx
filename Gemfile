@@ -41,7 +41,6 @@ gem 'yettings', '0.1.1'
 gem 'kaminari', '0.17.0'
 gem 'chinese_pinyin', '1.0.1'
 gem 'annotate', '2.7.1'
-gem 'erd', '0.4.0'
 gem 'rails-settings-cached', '0.6.5'
 
 group :development, :test do
@@ -55,6 +54,7 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'erd', '0.4.0'
   gem 'web-console', '3.3.1'
 
   gem 'capistrano', '~> 3.6.1'
