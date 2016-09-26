@@ -9,9 +9,7 @@ module Admin
     end
 
     def create
-      @setting = Setting.find_or_create_by(var: params[:var]) do |setting|
-        setting.value = params[:value]
-      end
+      @setting = Setting.find_or_initialize_by(var: params[:var]).update_attributes!(value: params[:value])
       redirect_back fallback_location: admin_settings_path, flash: { success: 'update/create setting successful' }
     end
 
