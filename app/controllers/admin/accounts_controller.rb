@@ -1,40 +1,43 @@
-class Admin::AccountsController < AdminController
-  before_action :admin_required
+module Admin
+  # everyday payment
+  class AccountsController < AdminController
+    before_action :admin_required
 
-  def index
-    @account = Account.new
-    @accounts = Account.order("ID DESC").page(params[:page]).per(10)
-  end
-
-  def create
-    @account = Account.new(account_params)
-    if @account.save
-      redirect_to admin_accounts_path
-    else
-      render "something wrong"
+    def index
+      @account = Account.new
+      @accounts = Account.order('ID DESC').page(params[:page]).per(10)
     end
-  end
 
-  def edit
-    @account = Account.find(params[:id])
-  end
-
-  def update
-    @account = Account.find(params[:id])
-    if @account.update!(params_account)
-      redirect_to admin_accounts_path
-    else
-      render "somethig wrong"
+    def create
+      @account = Account.new(account_params)
+      if @account.save
+        redirect_to admin_accounts_path
+      else
+        render 'something wrong'
+      end
     end
-  end
 
-  private
+    def edit
+      @account = Account.find(params[:id])
+    end
 
-  def account_params
-    params.require(:account).permit(:description, :price).merge(created_at: Time.current)
-  end
+    def update
+      @account = Account.find(params[:id])
+      if @account.update!(params_account)
+        redirect_to admin_accounts_path
+      else
+        render 'somethig wrong'
+      end
+    end
 
-  def params_account
-    params.require(:account).permit(:description, :price, :created_at)
+    private
+
+    def account_params
+      params.require(:account).permit(:description, :price).merge(created_at: Time.current)
+    end
+
+    def params_account
+      params.require(:account).permit(:description, :price, :created_at)
+    end
   end
 end

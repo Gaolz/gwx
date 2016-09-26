@@ -1,22 +1,26 @@
-class Admin::WordsController < AdminController
-  before_filter :admin_required
+module Admin
+  # admin manages words
+  class WordsController < AdminController
+    before_action :admin_required
 
-  def create
-    @word = Word.new(word_params)
-    if @word.save
-      redirect_back fallback_location: admin_words_path, flash: { success: "create word successful" }
-    else
-      redirect_back fallback_location: admin_words_path, flash: { error: "something wrong" }
+    def create
+      @word = Word.new(word_params)
+      if @word.save
+        redirect_back fallback_location: admin_words_path, flash: { success: 'create word successful' }
+      else
+        redirect_back fallback_location: admin_words_path, flash: { error: 'something wrong' }
+      end
     end
-  end
 
-  def index
-    @word = Word.new
-    @words = Word.order("ID DESC").page(params[:page]).per(5)
-  end
+    def index
+      @word = Word.new
+      @words = Word.order('ID DESC').page(params[:page]).per(5)
+    end
 
-  private
+    private
+
     def word_params
       params.require(:word).permit(:body)
     end
+  end
 end

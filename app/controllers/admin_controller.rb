@@ -1,3 +1,4 @@
+# admin root controller
 class AdminController < ApplicationController
   layout 'admin'
 

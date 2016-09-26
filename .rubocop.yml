@@ -2,16 +2,16 @@
 # RunRailsCops: true
 
 Style/Documentation:
-  Enabled: false
+  Enabled: true
 
 Style/IfUnlessModifier:
-  Enabled: false
+  Enabled: true
 
 Style/AsciiComments:
-  Enabled: false
+  Enabled: true
 
 Style/StringLiterals:
-  Enabled: false
+  Enabled: true
 
 Metrics/LineLength:
   Max: 1200
@@ -23,10 +23,10 @@ Metrics/MethodLength:
   Max: 1200
 
 Metrics/CyclomaticComplexity:
-    Enabled: false
+    Enabled: true
 
 Metrics/AbcSize:
-  Enabled: false
+  Enabled: true
 
 Rails:
   Enabled: true
