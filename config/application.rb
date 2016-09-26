@@ -45,5 +45,8 @@ module Gwx
         request_specs: false
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
     end
+
+    config.middleware.insert_after "Rack::Runtime", "Attack"
+
   end
 end
