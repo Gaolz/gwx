@@ -136,12 +136,12 @@ module ChineseLunar
         nong_date[4] -= 1
       end
 
-      nong_date[1] = i
+      nong_date[1] = count
       nong_date[2] = offset + 1
 
       nong_date
     end
-# ********** END **********
+    # ********** END **********
 
     # Return the days in lunar of y year.
     def days_in_lunar_date(year)
