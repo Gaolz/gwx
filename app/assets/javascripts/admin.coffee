@@ -2,8 +2,7 @@ window.Admin =
 editor:() ->
   new Simditor(
     textarea: $('#editor')
-    toolbar: ['title','bold','italic','underline','color','|','ol','ul','blockquote','code','table','|','link','image','emoji','hr', '|', 'html', 'markdown', 'fullscreen']
-    markdown: false
+    toolbar: ['title','bold','italic','underline','color','|','ol','ul','blockquote','code','table','|','link','image','emoji','hr']
     emoji: {
       imagePath: '/images/simditor-emoji/'
     }

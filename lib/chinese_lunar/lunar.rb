@@ -3,7 +3,7 @@
 module ChineseLunar
   # 公历农历互转
   class Lunar
-
+    
     LunarInfo = [
       0x04bd8, 0x04ae0, 0x0a570, 0x054d5, 0x0d260, 0x0d950, 0x16554,
       0x056a0, 0x09ad0, 0x055d2, 0x04ae0, 0x0a5b6, 0x0a4d0, 0x0d250,
@@ -72,10 +72,10 @@ module ChineseLunar
       leap = 0 # 初始化一个堆
       base_date = Date.new(0 + 1900, 1, 31)
 
-      obj_date = Date.new(year, month, day);
+      obj_date = Date.new(year, month, day)
       offset = obj_date - base_date
-      nong_date[5] = offset + 40;
-      nong_date[4] = 14;
+      nong_date[5] = offset + 40
+      nong_date[4] = 14
 
       count = 1900
       while count < 2050 && offset > 0
@@ -86,7 +86,7 @@ module ChineseLunar
         count += 1
       end
 
-      if (offset < 0)
+      if offset < 0
         offset += temp
         count -= 1
         nong_date[4] -= 12
@@ -94,34 +94,30 @@ module ChineseLunar
 
       nong_date[0] = count
       nong_date[3] = count - 1864
-      leap = leap_month(count) #闰哪个月
+      leap = leap_month(count) # 闰哪个月
       nong_date[6] = 0
 
-      count = 1  
-      while(count < 13 && offset > 0)
-        #闰月
-        if (leap > 0 && count == (leap + 1) && nong_date[6] == 0)
+      count = 1
+      while count < 13 && offset > 0
+        # 闰月
+        if leap > 0 && count == (leap + 1) && (nong_date[6]).zero?
           count -= 1
           nong_date[6] = 1
-          temp = leap_days( nong_date[0])
+          temp = leap_days(nong_date[0])
         else
-          temp = monthDays( nong_date[0], count)
+          temp = monthDays(nong_date[0], count)
         end
 
-        #解除闰月
-        if (nong_date[6] == 1 && count == (leap + 1))
-          nong_date[6] = 0
-        end
+        # 解除闰月
+        nong_date[6] = 0 if nong_date[6] == 1 && count == (leap + 1)
         offset -= temp
-        if (nong_date[6] == 0)
-          nong_date[4] += 1
-        end
+        nong_date[4] += 1 if (nong_date[6]).zero?
 
         count += 1
       end
 
-      if (offset == 0 && leap > 0 && count == leap + 1)
-        if (nong_date[6] == 1)
+      if offset.zero? && leap > 0 && count == leap + 1
+        if nong_date[6] == 1
           nong_date[6] = 0
         else
           nong_date[6] = 1
@@ -130,7 +126,7 @@ module ChineseLunar
         end
       end
 
-      if (offset < 0)
+      if offset < 0
         offset += temp
         count -= 1
         nong_date[4] -= 1
@@ -148,9 +144,7 @@ module ChineseLunar
       sum = 348
       count = 0x8000
       while count > 0x8
-        if ((LunarInfo[year - 1900] & count) != 0)
-          sum += 1
-        end
+        sum += 1 if (LunarInfo[year - 1900] & count).nonzero?
         count >>= 1
       end
 
@@ -159,8 +153,8 @@ module ChineseLunar
 
     # Return the leap days in y year.
     def leap_days(y)
-      if (leap_month(y) != 0)
-        if ((LunarInfo[y - 1900] & 0x10000) != 0)
+      if leap_month(y).nonzero?
+        if (LunarInfo[y - 1900] & 0x10000).nonzero?
           return 30
         else
           return 29
@@ -170,19 +164,18 @@ module ChineseLunar
       end
     end
 
-    # 传回农历 y年闰哪个月 1-12 , 没闰传回 0  
+    # 传回农历 y年闰哪个月 1-12 , 没闰传回 0
     def leap_month(y)
       LunarInfo[y - 1900] & 0xf
     end
 
     # Return the days of m month in y year.
     def  monthDays(y, m)
-      if ((LunarInfo[y - 1900] & (0x10000 >> m)) == 0)
+      if (LunarInfo[y - 1900] & (0x10000 >> m)).zero?
         return 29
       else
         return 30
       end
     end
-
   end
 end

@@ -18,10 +18,10 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-require File.expand_path(File.dirname(__FILE__) + "/environment")
+require File.expand_path(File.dirname(__FILE__) + '/environment')
 
 set :output, { error: 'log/cron_error.log', standard: 'log/cron.log' }
 
 every :day, at: '7:00' do
-  rake "glz:birth"
+  rake 'glz:birth'
 end
