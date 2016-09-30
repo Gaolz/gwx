@@ -14,6 +14,6 @@ class ApplicationController < ActionController::Base
   end
 
   def current_admin?
-    session[:login] && (session[:login] == Yetting.admin_session_login)
+    session[:login] == Yetting.admin_session_login
   end
 end

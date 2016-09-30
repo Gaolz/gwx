@@ -54,7 +54,7 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'erd', '0.4.0'
+  # gem 'erd', '0.4.0'
   gem 'web-console', '3.3.1'
 
   gem 'capistrano', '~> 3.6.1'
@@ -66,8 +66,10 @@ group :development do
   # Spring speeds up development by keeping your application running
   # in the background. Read more: https://github.com/rails/spring
   gem 'spring', '1.7.2'
-  gem 'pry-rails', '0.3.4'
+  gem 'pry-rails', '0.3.4', require: false
   gem 'rack-mini-profiler', '0.10.1', require: false
+  gem 'derailed_benchmarks', '~> 1.3.1'
+  gem 'stackprof'
 end
 
 group :test do

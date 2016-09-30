@@ -2,13 +2,13 @@
 # RunRailsCops: true
 
 Style/Documentation:
-  Enabled: true
+  Enabled: false
 
 Style/IfUnlessModifier:
   Enabled: true
 
 Style/AsciiComments:
-  Enabled: true
+  Enabled: false
 
 Style/StringLiterals:
   Enabled: true
