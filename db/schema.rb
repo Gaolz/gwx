@@ -27,13 +27,13 @@ ActiveRecord::Schema.define(version: 20160901022040) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "posts", force: :cascade do |t|
-    t.string   "title",         limit: 30, default: "我的日志", null: false
-    t.text     "content"
+  create_table "posts", force: :cascade, comment: "博客表" do |t|
+    t.string   "title",         limit: 30, default: "我的日志", null: false, comment: "标题"
+    t.text     "content",                                                comment: "内容"
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
-    t.string   "url_title"
-    t.integer  "visited_count",            default: 0,      null: false
+    t.string   "url_title",                                              comment: "日志地址名"
+    t.integer  "visited_count",            default: 0,      null: false, comment: "日志浏览量"
     t.index ["url_title"], name: "index_posts_on_url_title", using: :btree
   end
 
@@ -48,16 +48,16 @@ ActiveRecord::Schema.define(version: 20160901022040) do
   end
 
   create_table "taggings", force: :cascade do |t|
-    t.integer  "post_id"
-    t.integer  "tag_id"
+    t.integer  "post_id",                 comment: "日志ID"
+    t.integer  "tag_id",                  comment: "标签ID"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_taggings_on_post_id", using: :btree
     t.index ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
   end
 
-  create_table "tags", force: :cascade do |t|
-    t.string   "name"
+  create_table "tags", force: :cascade, comment: "博客标签表" do |t|
+    t.string   "name",                    comment: "标签名"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_tags_on_name", using: :btree
