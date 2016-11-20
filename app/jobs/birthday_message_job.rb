@@ -6,9 +6,9 @@ class BirthdayMessageJob < ApplicationJob
   def perform(user_id)
     user = User.find(user_id)
     mobiles = %w(13730820749 18382012700)
-    recievers = User.where(mobile: mobiles)
-    recievers.each do |reciever|
-      ChinaSMS.to reciver.mobile, "【高老庄】亲爱的#{reciever.name}，今天是你的亲人#{user.name}，#{user.age}岁的生日，请对#{user.zh_sex}说声“生日快乐”，方便的话，也不要吝啬的你的双手，给#{user.zh_sex}一个真诚的拥抱。"
+    receivers = User.where(mobile: mobile)
+    receivers.each do |receiver|
+      ChinaSMS.to receiver.mobile, "【高老庄】亲爱的#{reciever.name}，今天是你的亲人#{user.name}，#{user.age}岁的生日，请对#{user.zh_sex}说声“生日快乐”，方便的话，也不要吝啬的你的双手，给#{user.zh_sex}一个真诚的拥抱。"
     end
   end
 end
