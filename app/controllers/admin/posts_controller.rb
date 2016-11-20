@@ -1,8 +1,8 @@
 module Admin
-
-  # admin manages posts
   class PostsController < AdminController
+
     before_action :admin_required
+
     def new
       @post = Post.new
     end
