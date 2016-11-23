@@ -56,6 +56,7 @@ Rails.application.routes.draw do
   end
 
   get 'about' => 'home#about', as: :about
+  get 'book' => 'home#book'
 
   # Example resource route with options:
   #   resources :products do
