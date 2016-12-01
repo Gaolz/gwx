@@ -25,3 +25,8 @@ set :output, { error: 'log/cron_error.log', standard: 'log/cron.log' }
 every :day, at: '7:00' do
   rake 'glz:birth'
 end
+
+# To be who you are
+every :day, at: '5:00' do
+  rake 'glz:word'
+end
