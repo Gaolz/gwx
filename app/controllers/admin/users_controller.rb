@@ -1,3 +1,7 @@
+# encoding: utf-8
+
+require 'chinese_lunar/lunar'
+
 module Admin
   # admin manages users
   class UsersController < AdminController
@@ -5,6 +9,7 @@ module Admin
     before_action :set_user, only: [:edit, :update]
 
     def index
+      @china_day = ChineseLunar::Lunar.new.lunar_date
       @user = User.new
       @users = User.order(:birthday).page(params[:page]).per(20)
     end
