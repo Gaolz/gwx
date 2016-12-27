@@ -1,0 +1,1 @@
+Rails.application.config.middleware.insert_after Rack::Runtime, Attack
