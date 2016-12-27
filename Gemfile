@@ -70,6 +70,7 @@ group :development do
   gem 'rack-mini-profiler', '0.10.1', require: false
   gem 'derailed_benchmarks', '~> 1.3.1'
   gem 'stackprof'
+  gem 'rails_db'
 end
 
 group :test do
