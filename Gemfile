@@ -43,6 +43,9 @@ gem 'chinese_pinyin', '1.0.1'
 gem 'annotate', '2.7.1'
 gem 'rails-settings-cached', '0.6.5'
 
+# font-end
+gem 'vuejs-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution
   # and get a debugger console

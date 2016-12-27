@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require simditor
+//= require vue
 //= require_tree .
 
 
