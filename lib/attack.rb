@@ -8,7 +8,6 @@ class Attack
   end
 
   def call(env)
-    # binding.pry
     http_path = env["REQUEST_PATH"].downcase
     if Black_lists.any?{ |black| http_path.include? black }
       [404, {"Content-Type" => "text/html"}, ["WTF"]]
@@ -19,7 +18,6 @@ class Attack
   end
 
   def each(&block)
-    # block.call("<!-- #{@message}: #{@stop - @start} -->\n") if @headers["Content-Type"].include? "text/html"
     @response.each(&block)
   end
 

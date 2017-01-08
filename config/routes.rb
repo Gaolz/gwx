@@ -49,10 +49,14 @@ Rails.application.routes.draw do
     resources :sessions, only: [:new, :create, :destroy]
     root to: 'home#index', as: :root
 
+    concern :paginatable do
+      get '(page/:page)', :action => :index, :on => :collection, :as => ''
+    end
+
     resources :accounts
     resources :settings
     resources :users
-    resources :words
+    resources :words, concerns: :paginatable
   end
 
   get 'about' => 'home#about', as: :about

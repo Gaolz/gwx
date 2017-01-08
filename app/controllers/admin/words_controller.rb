@@ -15,6 +15,7 @@ module Admin
     def index
       @word = Word.new
       @words = Word.order('ID DESC').page(params[:page]).per(5)
+      respond_to :html, :js
     end
 
     private
