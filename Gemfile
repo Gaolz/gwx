@@ -31,7 +31,11 @@ gem 'gemoji', '2.1.0'
 gem 'slim-rails', '3.1.0'
 
 # use bootstrap as css framework
-gem 'bootstrap-sass', '3.3.7'
+gem 'bootstrap', '~> 4.0.0.alpha6'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end
 
 # simditor as blog editor
 gem 'simditor', '2.3.6'

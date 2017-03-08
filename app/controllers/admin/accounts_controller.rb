@@ -1,7 +1,6 @@
 module Admin
   # everyday payment
   class AccountsController < AdminController
-    before_action :admin_required
 
     def index
       @account = Account.new

@@ -5,7 +5,6 @@ require 'chinese_lunar/lunar'
 module Admin
   # admin manages users
   class UsersController < AdminController
-    before_action :admin_required
     before_action :set_user, only: [:edit, :update]
 
     def index

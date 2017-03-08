@@ -1,7 +1,6 @@
 module Admin
   # admin manages words
   class WordsController < AdminController
-    before_action :admin_required
 
     def create
       @word = Word.new(word_params)

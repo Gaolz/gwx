@@ -1,0 +1,10 @@
+<ul class="nav my-2 my-lg-0"">
+    <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            bscd
+        </a>
+        <%= render_list class: "dropdown-menu dropdown-menu-right", role: "menu" do |li|
+            li << link_to("退出", admin_session_path(1), method: :delete, data: { confirm: "确定退出？" }, class: "dropdown-item")
+        end %>
+    </li>
+</ul>
