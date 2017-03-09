@@ -41,7 +41,6 @@ gem 'puma', '3.6.0'
 gem 'yettings', '0.1.1'
 gem 'kaminari', '0.17.0'
 gem 'chinese_pinyin', '1.0.1'
-gem 'annotate', '2.7.1'
 gem 'rails-settings-cached', '0.6.5'
 
 group :development, :test do
