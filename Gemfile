@@ -37,9 +37,6 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
 
-# simditor as blog editor
-gem 'simditor', '2.3.6'
-
 gem 'puma', '3.6.0'
 gem 'yettings', '0.1.1'
 gem 'kaminari', '0.17.0'
