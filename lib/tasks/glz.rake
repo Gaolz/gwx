@@ -9,7 +9,7 @@ namespace :glz do
     birthdays = User.pluck(:id,:birthday).select do |user|
       user[1].to_date.to_s == lunar
     end
-    if birthdays.present?
+    if birthdays.flatten.present?
       birthdays.each do |birthday|
         begin
           user = User.find birthday[0]
