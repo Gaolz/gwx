@@ -1,3 +1,32 @@
+/*
+  *= require_self
+*/
+@import 'bootstrap';
+
+body { 
+  background-color: #e9eaed;
+  color: #333;
+}
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   14px;
+  line-height: 18px;
+}
+
+nav {
+  .container {
+    .collapse {
+      .nav-item {
+        .nav-link {
+          padding: 14px 6px;
+        }
+      }
+    }
+  }
+}
+
+
 #admin-header {
   padding: 10px 0;
   margin: 0 auto;
@@ -30,34 +59,4 @@
 }
 
 /* admin layouts */
-#container {
-  margin: 0;
-  padding: 0;
-}
 
-#sidebar {
-  width: 15%;
-  display: inline;
-  float: left;
-  background-color: rgba(102,143,220,0.26);
-  nav {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    list-style: none;
-    li {
-      background: skyblue;
-      width: 100%;
-      border-bottom: 1px solid white;
-    }
-  }
-}
-
-#contents {
-  width: 85%;
-  display: inline;
-  float: left;
-  background: #fff none repeat scroll 0% 0%;
-  padding: 20px 0 0 20px;
-}

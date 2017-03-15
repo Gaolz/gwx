@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= yield(:title) || GLZ %></title>
+  <title>bscd - 控制台</title>
   <meta name="title" content="Admin Page Of #{Yetting.app_name}" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="爱好中医的rubist" />
   <meta name="author" content="高老庄">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="container">
-    <div id="sidebar">
-      <nav class="navbar-collapse bs-navbar-collapse collapse">
-        <h3><p class="text-center">控制台</p></h3>
-        <ul class="nav navbar-nav">
-          <li><%= link_to "高老庄", admin_root_path %></li>
-          <li><%= link_to "日志", admin_posts_path %></li>
-          <li><%= link_to "口水话", admin_words_path %></li>
-          <li><%= link_to "家人", admin_users_path %></li>
-          <li><%= link_to "支出", admin_accounts_path %></li>
-          <li><%= link_to "settings", admin_settings_path %></li>
-          <li><%= link_to "退出", admin_session_path(1), method: :delete, data: { confirm: "确定退出？" } if current_admin? %></li>
-        </ul>
+  <nav class="navbar navbar-toggleable-md fixed-top navbar-light bg-faded" style="height:3.4em;">
+    <div class="container">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-brand">
+        <%= link_to("控制台", admin_root_path, class: "navbar-brand") %>
+      </div>
+      <nav class="collapse navbar-collapse" id="navbarSupportedContent">
+        <%= render_list class: "nav navbar-nav mr-auto" do |li|
+          li << link_to("高老庄", admin_root_path, class: "nav-link")
+          li << link_to("日志", admin_posts_path, class: "nav-link")
+          li << link_to("口水话", admin_words_path, class: "nav-link")
+          li << link_to("家人", admin_users_path, class: "nav-link")
+          li << link_to("支出", admin_accounts_path, class: "nav-link")
+        end %>
+
+        <%= render "shared/usernav" %>
       </nav>
     </div>
-    <div id="contents">
-      <%= render partial: 'header' %>
-      <div class="container"><%= notice_message %></div>
-      <%= yield %>
-    </div>
+  </nav>
+  <div id="contents">
+    <%= render partial: 'header' %>
+    <div class="container"><%= notice_message %></div>
+    <%= yield %>
   </div>
 </body>
 </html>

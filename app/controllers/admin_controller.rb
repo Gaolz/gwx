@@ -2,8 +2,14 @@
 class AdminController < ApplicationController
   layout 'admin'
 
-  def admin_required
-    redirect_to new_admin_session_path, alert: t('admin.session.need_login')\
-      unless current_admin?
+  before_action :require_admin
+  before_action :set_active_menu
+
+  def set_active_menu
+    @current = ['/' + ['admin', controller_name].join('/')]
+  end
+
+  def require_admin
+    render_404 unless current_admin?
   end
 end

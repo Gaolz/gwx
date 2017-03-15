@@ -54,7 +54,6 @@ Rails.application.routes.draw do
     end
 
     resources :accounts
-    resources :settings
     resources :users
     resources :words, concerns: :paginatable
   end

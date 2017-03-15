@@ -14,7 +14,7 @@ class BirthdayMessageJob < ApplicationJob
       if feedback["code"] == 0
         Rails.logger.info "*******今天#{Date.today}是#{user.name}的生日!!!***********"
       else
-        Rails.logger.error %Q(****#{Date.today}-msg: #{feedback["msg"]}, detail: "#{feedback["detail"]}"***) if feekback["code"] != 0
+        Rails.logger.error %Q(****#{Date.today}-msg: #{feedback["msg"]}, detail: "#{feedback["detail"]}"***)
       end
     end
   end

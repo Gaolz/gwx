@@ -1,5 +1,7 @@
 class Admin::SessionsController < AdminController
 
+  skip_before_action :require_admin
+
   def new
     render layout: 'application'
   end

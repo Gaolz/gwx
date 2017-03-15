@@ -1,6 +1,8 @@
 module ApplicationHelper
   include LetterAvatar::AvatarHelper
 
+  EMPTY_STRING = ''.freeze
+
   def title(page_title)
     content_for(:title) { h(page_title.to_s) }
   end
@@ -32,5 +34,37 @@ module ApplicationHelper
 
   def word_color
     "bg-".concat %w(primary success info warning danger).sample
+  end
+
+  def render_list(opts = {})
+    list = []
+    yield(list)
+    items = []
+    list.each do |link|
+      item_class = EMPTY_STRING
+      urls = link.match(/href=(["'])(.*?)(\1)/) || []
+      url = urls.length > 2 ? urls[2] : nil
+      if url && current_page?(url) || (@current && @current.include?(url))
+        item_class = 'active'
+      end
+      items << content_tag('li', raw(link), class: item_class)
+    end
+    content_tag('ul', raw(items.join(EMPTY_STRING)), opts)
+  end
+
+  def render_list(opts = {})
+    list = []
+    yield(list)
+    items = []
+    list.each do |link|
+      item_class = EMPTY_STRING
+      urls = link.match(/href=([""])(.*?)(\1)/) || []
+      url = urls.length > 2 ? urls[2] : nil
+      if url && current_page?(url) || (@current && @current.include?(url))
+        item_class = 'active'
+      end
+      items << content_tag('li', raw(link), class: (item_class + ' nav-item'))
+    end
+    content_tag('ul', raw(items.join(EMPTY_STRING)), opts)
   end
 end

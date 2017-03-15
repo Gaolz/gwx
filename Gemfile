@@ -1,6 +1,6 @@
 source 'https://gems.ruby-china.org'
 
-gem 'rails', '5.0.1'
+gem 'rails', '5.0.2'
 gem 'rails-i18n', '5.0.0'
 gem 'pg', '0.18.4'
 gem 'sass-rails', '5.0.6'
@@ -31,23 +31,23 @@ gem 'gemoji', '2.1.0'
 gem 'slim-rails', '3.1.0'
 
 # use bootstrap as css framework
-gem 'bootstrap-sass', '3.3.7'
+gem 'bootstrap', '~> 4.0.0.alpha6'
 
-# simditor as blog editor
-gem 'simditor', '2.3.6'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end
 
 gem 'puma', '3.6.0'
 gem 'yettings', '0.1.1'
 gem 'kaminari', '0.17.0'
 gem 'chinese_pinyin', '1.0.1'
-gem 'annotate', '2.7.1'
 gem 'rails-settings-cached', '0.6.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution
   # and get a debugger console
   gem 'byebug', '9.0.0', platform: :mri
-  gem 'rubocop', '0.42.0'
+  gem 'rubocop', '0.47.1'
   gem 'rspec-rails', '3.5.1'
   gem 'factory_girl_rails', '4.7.0'
 end
