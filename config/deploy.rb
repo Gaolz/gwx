@@ -18,7 +18,7 @@ set :repo_url, 'git@github.com:Gaolz/gwx.git'
 set :rbenv_type, :user
 set :rbenv_ruby, '2.3.1'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-set :rbenv_map_bins, %w(rake gem bundle ruby rails)
+set :rbenv_map_bins, %w(rake gem bundle ruby rails sidekiq sidekiqctl)
 
 # Default value for :format is :pretty
 # set :format, :pretty
