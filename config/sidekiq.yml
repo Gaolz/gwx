@@ -1,0 +1,15 @@
+---
+:concurrency: 5
+:pidfile: tmp/pids/sidekiq.pid
+:logfile: log/sidekiq.log
+:queues:
+  - [default, 1]
+  - [birthday_message, 2]
+  - [word, 3]
+
+development:
+  :concurrentcy: 5
+test:
+  :concurrentcy: 5
+production:
+  :concurrentcy: 5

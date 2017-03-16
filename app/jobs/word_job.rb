@@ -1,8 +1,6 @@
 # encoding: utf-8
 
 class WordJob < ApplicationJob
-  self.queue_adapter = :sucker_punch
-  include SuckerPunch::Job
   queue_as :word
 
   def perform()

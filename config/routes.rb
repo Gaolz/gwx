@@ -44,6 +44,9 @@ Rails.application.routes.draw do
   post 'photo' => 'photos#upload'
 
   namespace :admin do
+    require 'sidekiq/web'
+    mount Sidekiq::Web => '/sidekiq'
+
     get 'tags/:tag', to: 'posts#index', as: :tag
     resources :posts, except: [:destroy]
     resources :sessions, only: [:new, :create, :destroy]

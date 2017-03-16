@@ -1,8 +1,6 @@
 # encoding: utf-8
 
 class BirthdayMessageJob < ApplicationJob
-  self.queue_adapter = :sucker_punch
-  include SuckerPunch::Job
   queue_as :birthday_message
 
   def perform(user_id)
