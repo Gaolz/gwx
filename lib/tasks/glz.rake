@@ -13,7 +13,7 @@ namespace :glz do
         birthdays.each do |birthday|
           begin
             user = User.find birthday[0]
-            BirthdayMessageJob.perform_async(user.id)
+            BirthdayMessageJob.perform_later(user.id)
           ensure
             user.update!(birthday: user.birthday + 1.year)
           end
@@ -24,6 +24,6 @@ namespace :glz do
 
   desc "激励"
   task :word => :environment do
-    WordJob.perform_now()
+    WordJob.perform_later()
   end
 end
