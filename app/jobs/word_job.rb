@@ -5,7 +5,7 @@ class WordJob < ApplicationJob
 
   def perform()
     # Todo: mobile = User.subscriber.pluck(:mobile)
-    mobiles = %w(13730820749 18382012700)
+    mobiles = %w(13730820749)
     message = "【高老庄】Now or never, it's #{Date.today}, go go go. Strict self-discipline"
     mobiles.each do |mobile|
       feedback = ChinaSMS.to mobile, message 
