@@ -1,12 +1,6 @@
 require 'rails_helper'
 
 describe Tagging, type: :model do
-  before :each do
-    @post = FactoryGirl.create(:post)
-    @tagging = @post.taggings.take
-  end
-
-  subject { @tagging }
 
   it { is_expected.to belong_to(:tag) }
   it { is_expected.to belong_to(:post) }

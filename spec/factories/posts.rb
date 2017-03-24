@@ -5,7 +5,7 @@ FactoryGirl.define do
     title Faker::Name.title.truncate(25)
     url_title { Pinyin.t(title.dup, splitter: '-') }
     content Faker::Lorem.paragraphs
-    all_tags Faker::Hipster.words.join(',')
+    # all_tags Faker::Hipster.words.join(',')
 
     factory :invalid_post do
       title nil

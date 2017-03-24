@@ -50,6 +50,7 @@ group :development, :test do
   gem 'rubocop', '0.47.1'
   gem 'rspec-rails', '3.5.1'
   gem 'factory_girl_rails', '4.7.0'
+  gem 'pry-rails', '0.3.4'
 end
 
 group :development do
@@ -67,7 +68,6 @@ group :development do
   # Spring speeds up development by keeping your application running
   # in the background. Read more: https://github.com/rails/spring
   gem 'spring', '1.7.2'
-  gem 'pry-rails', '0.3.4'
   gem 'rack-mini-profiler', '0.10.1', require: false
   gem 'derailed_benchmarks', '~> 1.3.1'
   gem 'stackprof'

@@ -18,7 +18,7 @@
 class Post < ApplicationRecord
   require 'chinese_pinyin'
 
-  validates :title, presence: true, uniqueness: true
+  validates :title, presence: true, uniqueness: true, case_sensitive: false
   validates :url_title, presence: true, uniqueness: true
   validates :content, presence: true
   has_many :taggings
