@@ -2,10 +2,9 @@ require 'faker'
 
 FactoryGirl.define do
   factory :post, class: "Post" do
-    title Faker::Name.title.truncate(25)
+    title { Faker::Name.title.truncate(25) }
     url_title { Pinyin.t(title.dup, splitter: '-') }
-    content Faker::Lorem.paragraphs
-    # all_tags Faker::Hipster.words.join(',')
+    content { Faker::Lorem.paragraphs }
 
     factory :invalid_post do
       title nil
@@ -13,7 +12,6 @@ FactoryGirl.define do
 
     factory :ruby_post do
       sequence(:title) { |n| "iloveruby_#{n}" }
-      all_tags "ruby,rails"
     end
   end
 end
