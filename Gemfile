@@ -75,7 +75,7 @@ group :development do
 end
 
 group :test do
-  gem 'faker', '1.6.6'
+  gem 'faker', '1.7.3'
   gem 'capybara', '2.7.1'
   gem 'database_cleaner', '1.5.3'
   gem 'shoulda-matchers', '3.1.1'
