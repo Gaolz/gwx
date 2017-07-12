@@ -2,6 +2,7 @@
   <%= form_for @account, url: admin_accounts_path do |f| %>
     <%= f.text_field :description, placeholder: "事项" %>
     <%= f.text_field :price, placeholder: "金额" %>
+    <%= f.datetime_select :created_at %>
     <%= f.submit "新增开支" %>
   <% end %>
 </div>
