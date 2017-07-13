@@ -43,6 +43,9 @@ gem 'kaminari', '0.17.0'
 gem 'chinese_pinyin', '1.0.1'
 gem 'rails-settings-cached', '0.6.5'
 
+gem 'chartkick'
+gem 'groupdate'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution
   # and get a debugger console
