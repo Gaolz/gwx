@@ -37,7 +37,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
 
-gem 'puma', '3.6.0'
+gem 'puma', '3.11.0'
 gem 'yettings', '0.1.1'
 gem 'kaminari', '0.17.0'
 gem 'chinese_pinyin', '1.0.1'
@@ -61,11 +61,11 @@ group :development do
   # gem 'erd', '0.4.0'
   gem 'web-console', '3.3.1'
 
-  gem 'capistrano', '~> 3.6.1'
+  gem 'capistrano', '~> 3.7.1'
   gem 'capistrano-bundler', '1.1.4'
   gem 'capistrano-rails', '1.1.7'
   gem 'capistrano-rbenv', '2.0.4'
-  gem 'capistrano3-puma', '1.2.1'
+  gem 'capistrano3-puma', '~> 3.1.1'
   gem 'capistrano-sidekiq'
 
   # Spring speeds up development by keeping your application running
