@@ -1,13 +1,11 @@
 # encoding: utf-8
 
 class WordJob < ApplicationJob
-  self.queue_adapter = :sucker_punch
-  include SuckerPunch::Job
   queue_as :word
 
   def perform()
     # Todo: mobile = User.subscriber.pluck(:mobile)
-    mobiles = %w(13730820749 18382012700)
+    mobiles = %w(13730820749)
     message = "【高老庄】Now or never, it's #{Date.today}, go go go. Strict self-discipline"
     mobiles.each do |mobile|
       feedback = ChinaSMS.to mobile, message 

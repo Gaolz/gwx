@@ -27,6 +27,6 @@ every :day, at: '7:00am' do
 end
 
 # To be who you are
-every :day, at: '5:00am' do
-  rake 'glz:word'
-end
+# every :day, at: '5:00am' do
+#   rake 'glz:word'
+# end

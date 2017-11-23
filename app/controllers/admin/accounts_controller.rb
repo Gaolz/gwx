@@ -8,7 +8,7 @@ module Admin
     end
 
     def create
-      @account = Account.new(account_params)
+      @account = Account.new(params_account)
       if @account.save
         redirect_to admin_accounts_path
       else
@@ -30,10 +30,6 @@ module Admin
     end
 
     private
-
-    def account_params
-      params.require(:account).permit(:description, :price).merge(created_at: Time.current)
-    end
 
     def params_account
       params.require(:account).permit(:description, :price, :created_at)

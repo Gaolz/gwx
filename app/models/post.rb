@@ -18,7 +18,7 @@
 class Post < ApplicationRecord
   require 'chinese_pinyin'
 
-  validates :title, presence: true, uniqueness: true
+  validates :title, presence: true, uniqueness: true, case_sensitive: false
   validates :url_title, presence: true, uniqueness: true
   validates :content, presence: true
   has_many :taggings
@@ -33,7 +33,7 @@ class Post < ApplicationRecord
   end
 
   def all_tags=(names)
-    self.tags = names.split(',').map do |name|
+    names.split(',').map do |name|
       Tag.where(name: name.strip).first_or_create!
     end
   end
