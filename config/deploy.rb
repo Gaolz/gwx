@@ -11,7 +11,6 @@ set :deploy_to, -> { "/home/glz/#{fetch(:application)}" }
 # set :deploy_to, '/var/www/my_app_name'
 
 # Default value for :scm is :git
-set :scm, :git
 set :repo_url, 'git@github.com:Gaolz/gwx.git'
 
 # rbenv
