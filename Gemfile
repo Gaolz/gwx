@@ -63,7 +63,7 @@ group :development do
 
   gem 'capistrano', '~> 3.7.1'
   gem 'capistrano-bundler', '1.1.4'
-  gem 'capistrano-rails', '1.1.7'
+  gem 'capistrano-rails', '1.3.1'
   gem 'capistrano-rbenv', '2.0.4'
   gem 'capistrano3-puma', '~> 3.1.1'
   gem 'capistrano-sidekiq'
