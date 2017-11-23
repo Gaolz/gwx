@@ -61,7 +61,7 @@ group :development do
   # gem 'erd', '0.4.0'
   gem 'web-console', '3.3.1'
 
-  gem 'capistrano', '~> 3.7.1'
+  gem 'capistrano', '~> 3.10'
   gem 'capistrano-bundler', '1.3.0'
   gem 'capistrano-rails', '1.3.1'
   gem 'capistrano-rbenv', '2.1.3'
